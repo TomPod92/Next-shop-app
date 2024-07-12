@@ -1,0 +1,18 @@
+.category-list-item {
+  & > a {
+    border: 1px solid var(--grey-light);
+    border-radius: var(--border-radius-large);
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    transition: all 0.25s ease-in-out;
+    background: var(--color-primary);
+    color: var(--off-white);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  & > a:hover {
+    background: var(--accent-main);
+    border: 1px solid var(--accent-main);
+  }
+}

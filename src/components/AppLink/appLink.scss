@@ -1,0 +1,7 @@
+.app-link {
+  & > a {
+    font-size: 2rem;
+    color: var(--off-white);
+    text-decoration: none;
+  }
+}

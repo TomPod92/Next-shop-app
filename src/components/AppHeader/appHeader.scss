@@ -1,0 +1,15 @@
+@import "../../app/breakpoints.scss";
+
+.app-header {
+  padding: 1rem 2rem;
+  border-bottom: 1px solid var(--grey-main);
+  position: sticky;
+  top: 0;
+  background: var(--primary-main);
+  box-shadow: 1rem 0 2rem rgba(0, 0, 0, 0.5);
+  text-align: center;
+
+  @media (min-width: $sm) {
+    text-align: left;
+  }
+}
