@@ -1,11 +1,11 @@
-import AppLink from "../AppLink/AppLink";
+import Link from "next/link";
 import "./appHeader.scss";
 
 const AppHeader = () => {
   return (
     <header className="app-header">
       <h1>
-        <AppLink text="Shop app" href="/" />
+        <Link href="/">Shop app</Link>
       </h1>
     </header>
   );

@@ -12,4 +12,8 @@
   @media (min-width: $sm) {
     text-align: left;
   }
+
+  & a {
+    font-size: 2rem;
+  }
 }

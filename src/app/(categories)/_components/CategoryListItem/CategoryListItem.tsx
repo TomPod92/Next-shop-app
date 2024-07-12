@@ -1,14 +1,20 @@
+import SkeletonElement from "@/components/SkeletonElement/SkeletonElement";
 import Link from "next/link";
 import "./categoryListItem.scss";
 
 interface Props {
   categoryName: string;
+  isLoading?: boolean;
 }
 
-const CategoryListItem = ({ categoryName }: Props) => {
+const CategoryListItem = ({ categoryName, isLoading }: Props) => {
   return (
     <li className="category-list-item">
-      <Link href={`/category/${categoryName}`}>{categoryName}</Link>
+      {isLoading ? (
+        <SkeletonElement />
+      ) : (
+        <Link href={`/category/${categoryName}`}>{categoryName}</Link>
+      )}
     </li>
   );
 };
