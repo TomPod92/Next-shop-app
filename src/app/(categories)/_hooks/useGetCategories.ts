@@ -6,12 +6,15 @@ import { QueryKeys } from "@/utils/queryKeys";
 
 const getCategories = async (): Promise<string[]> => {
   try {
-    const data = await axios.get(`${baseApiUrl}/products/categories`);
+    const data = await axios.get(`${baseApiUrl}/products/categoriess`);
 
+    console.log("data", data);
     console.log("data", data.data);
+    console.log("-----------------");
 
-    return data.data;
+    return data.data || [];
   } catch (error) {
+    console.log("error");
     throw new Error("error");
   }
 };
