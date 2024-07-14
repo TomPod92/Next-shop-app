@@ -48,3 +48,14 @@ a {
   color: var(--off-white);
   text-decoration: none;
 }
+
+.error-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+
+  &__message {
+    max-width: 60%;
+  }
+}
