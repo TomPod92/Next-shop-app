@@ -1,0 +1,23 @@
+.button {
+  padding: 1rem;
+  background-color: var(--accent-main);
+  border-radius: var(--border-radius-medium);
+  border: none;
+  color: var(--off-white);
+  letter-spacing: 1px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+
+  &:hover {
+    background-color: var(--accent-light);
+  }
+
+  &:disabled {
+    background-color: var(--accent-main);
+    opacity: 0.75;
+    color: white;
+    cursor: default;
+  }
+}
