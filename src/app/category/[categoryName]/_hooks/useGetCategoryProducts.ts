@@ -28,7 +28,7 @@ export const useCategoryProducts = ({
   enabled = true,
 }: Props) => {
   return useQuery({
-    queryKey: [QueryKeys.Category],
+    queryKey: [QueryKeys.Category, categoryName],
     queryFn: () => getCategoryProducts(categoryName),
     enabled: !!categoryName && enabled,
   });

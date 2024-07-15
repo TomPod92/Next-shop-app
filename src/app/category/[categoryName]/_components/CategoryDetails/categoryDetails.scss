@@ -1,6 +1,8 @@
 @import "../../../../../app/breakpoints.scss";
 
 .category-details {
+  --gap: 1rem;
+
   &__header {
     display: flex;
     flex-direction: column-reverse;
@@ -11,18 +13,45 @@
     @media (min-width: $sm) {
       flex-direction: row;
     }
-  }
 
-  &__title {
-    font-size: 2rem;
-    font-weight: normal;
+    &-title {
+      font-size: 2rem;
+      font-weight: normal;
 
-    & > span {
-      font-weight: bold;
+      & > span {
+        font-weight: bold;
+      }
+    }
+
+    &-button {
+      align-self: flex-end;
     }
   }
 
-  &__button {
-    align-self: flex-end;
+  &__product-list-header {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  &__product-list {
+    display: grid;
+    gap: 1rem;
+    max-width: 300px;
+    margin: 0 auto;
+
+    @media (min-width: $sm) {
+      margin: 0;
+      max-width: 100%;
+      grid-auto-flow: row;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (min-width: $md) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    @media (min-width: $lg) {
+      grid-template-columns: repeat(5, 1fr);
+    }
   }
 }

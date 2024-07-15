@@ -6,11 +6,7 @@ interface Props {
 }
 
 const CategoryPage = ({ params }: Props) => {
-  return (
-    <>
-      <CategoryDetails categoryName={params.categoryName} />
-    </>
-  );
+  return <CategoryDetails categoryName={decodeURI(params.categoryName)} />;
 };
 
 export default CategoryPage;
