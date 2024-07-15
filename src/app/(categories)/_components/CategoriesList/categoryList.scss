@@ -3,7 +3,19 @@
   flex-wrap: wrap;
   gap: 1rem;
   list-style-type: none;
+}
 
-  &__skeleton-element {
+.list-navigation {
+  display: flex;
+  align-items: strech;
+  gap: 1rem;
+  margin-bottom: 2rem;
+
+  &__input {
+    flex: 1;
+  }
+
+  & > &__button {
+    padding: 0 1rem;
   }
 }
