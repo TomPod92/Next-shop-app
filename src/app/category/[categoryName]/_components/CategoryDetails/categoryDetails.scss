@@ -1,0 +1,28 @@
+@import "../../../../../app/breakpoints.scss";
+
+.category-details {
+  &__header {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+
+    @media (min-width: $sm) {
+      flex-direction: row;
+    }
+  }
+
+  &__title {
+    font-size: 2rem;
+    font-weight: normal;
+
+    & > span {
+      font-weight: bold;
+    }
+  }
+
+  &__button {
+    align-self: flex-end;
+  }
+}

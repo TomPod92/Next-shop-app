@@ -1,11 +1,14 @@
-import Link from "next/link";
 import "./categoryPage.scss";
+import CategoryDetails from "./_components/CategoryDetails/CategoryDetails";
 
-const CategoryPage = () => {
+interface Props {
+  params: { categoryName: string };
+}
+
+const CategoryPage = ({ params }: Props) => {
   return (
     <>
-      <Link href="/">Go to gome</Link>
-      <p>Category Page</p>
+      <CategoryDetails categoryName={params.categoryName} />
     </>
   );
 };
