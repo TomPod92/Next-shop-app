@@ -7,6 +7,7 @@ import "./categoryList.scss";
 import NoDataInfo from "@/components/NoDataInfo/NoDataInfo";
 import { ChangeEvent, useMemo, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import useDebounceValue from "@/hooks/useDebounceValue";
 
 const skeletonArray = Array.from(Array(10));
 
@@ -17,6 +18,7 @@ const CategoryList = () => {
   // const router = useRouter();
 
   const [searchTerm, setSearchTerm] = useState("");
+  const debouncedSearchTerm = useDebounceValue(searchTerm);
 
   const {
     data: categories = [],
@@ -42,6 +44,7 @@ const CategoryList = () => {
   };
 
   const filteredCategories = useMemo(() => {
+    console.log("debouncedSearchTerm", debouncedSearchTerm);
     return searchTerm.length
       ? categories.filter((category) =>
           category
@@ -49,7 +52,7 @@ const CategoryList = () => {
             .includes(searchTerm.trim().toLocaleLowerCase())
         )
       : categories;
-  }, [searchTerm, categories]);
+  }, [debouncedSearchTerm, categories]);
 
   if (isError) {
     throw new Error(error.message);
