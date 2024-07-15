@@ -5,19 +5,15 @@ import { useCategories } from "../../_hooks/useGetCategories";
 import CategoryListItem from "../CategoryListItem/CategoryListItem";
 import "./categoryList.scss";
 import NoDataInfo from "@/components/NoDataInfo/NoDataInfo";
-import { ChangeEvent, useMemo, useState } from "react";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { ChangeEvent, useMemo } from "react";
+import { useSearchParams } from "next/navigation";
 import useDebounceValue from "@/hooks/useDebounceValue";
 
 const skeletonArray = Array.from(Array(10));
 
 const CategoryList = () => {
-  // const searchParams = useSearchParams();
-  // const searchTerm = searchParams.get("search") || "";
-  // const pathname = usePathname();
-  // const router = useRouter();
-
-  const [searchTerm, setSearchTerm] = useState("");
+  const searchParams = useSearchParams();
+  const searchTerm = searchParams.get("searchTerm") || "";
   const debouncedSearchTerm = useDebounceValue(searchTerm);
 
   const {
@@ -28,23 +24,19 @@ const CategoryList = () => {
   } = useCategories({});
 
   const handleSearchChange = (e: ChangeEvent<HTMLInputElement>) => {
-    // console.log("e", e.target.value);
+    const searchTerm = e.target.value;
+    const params = new URLSearchParams(searchParams);
+    if (searchTerm) {
+      params.set("searchTerm", searchTerm);
+    } else {
+      params.delete("searchTerm");
+    }
 
-    setSearchTerm(e.target.value);
-
-    // const encodedSearch = encodeURI(e.target.value);
-
-    // router.replace(`/?search=${encodedSearch}`);
-
-    // const params = new URLSearchParams(searchParams.toString());
-    // params.set("search", e.target.value);
-
-    // router.push(`${pathname}?search=${e.target.value}`);
-    // router.push(`${pathname}${searchTerm ? `?search=${e.target.value}` : ""}`);
+    history.replaceState(null, "", "?" + params.toString());
+    // router.replace(`${pathname}?${params.toString()}`);
   };
 
   const filteredCategories = useMemo(() => {
-    console.log("debouncedSearchTerm", debouncedSearchTerm);
     return searchTerm.length
       ? categories.filter((category) =>
           category
@@ -57,10 +49,6 @@ const CategoryList = () => {
   if (isError) {
     throw new Error(error.message);
   }
-
-  // if (!isLoading && !filteredCategories.length) {
-  //   return <NoDataInfo info="No categories to display :(" />;
-  // }
 
   return (
     <>
