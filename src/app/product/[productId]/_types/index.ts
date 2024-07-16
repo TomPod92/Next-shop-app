@@ -1,3 +1,8 @@
+type Rating = {
+  rate: number;
+  count: number;
+};
+
 export type Product = {
   id: number;
   title: string;
@@ -5,4 +10,5 @@ export type Product = {
   category: string;
   description: string;
   image: string;
+  rating: Rating;
 };

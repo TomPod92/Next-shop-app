@@ -1,0 +1,32 @@
+@import "../../../../breakpoints.scss";
+
+.product-details {
+  display: flex;
+  gap: 4rem;
+  flex-direction: column;
+  flex-shrink: 1;
+
+  @media (min-width: $md) {
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  &__image {
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+
+    @media (min-width: $md) {
+      margin: 0;
+      max-width: 350px;
+    }
+  }
+
+  & .description-info {
+    flex-direction: column;
+
+    @media (min-width: $sm) {
+      flex-direction: row;
+    }
+  }
+}

@@ -1,13 +1,12 @@
-import Link from "next/link";
 import "./productPage.scss";
+import ProductDetails from "./_components/ProductDetails/ProductDetails";
 
-const ProductPage = () => {
-  return (
-    <>
-      <Link href="/">Go to gome</Link>
-      <p>Product Page</p>
-    </>
-  );
+interface Props {
+  params: { productId: string };
+}
+
+const ProductPage = ({ params }: Props) => {
+  return <ProductDetails productId={params.productId} />;
 };
 
 export default ProductPage;

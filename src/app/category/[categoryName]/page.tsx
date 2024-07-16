@@ -1,4 +1,3 @@
-import "./categoryPage.scss";
 import CategoryDetails from "./_components/CategoryDetails/CategoryDetails";
 
 interface Props {

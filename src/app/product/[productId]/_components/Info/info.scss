@@ -1,0 +1,17 @@
+.info {
+  display: flex;
+  gap: 1rem;
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+  color: var(-off-white);
+
+  &__label {
+    font-weight: bold;
+    margin-right: 1rem;
+    min-width: 100px;
+  }
+
+  &__value {
+    word-break: break-all;
+  }
+}
