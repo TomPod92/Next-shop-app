@@ -1,5 +1,5 @@
-import SkeletonElement from "@/components/SkeletonElement/SkeletonElement";
 import Link from "next/link";
+import SkeletonElement from "@/components/SkeletonElement/SkeletonElement";
 import "./categoryListItem.scss";
 
 interface Props {

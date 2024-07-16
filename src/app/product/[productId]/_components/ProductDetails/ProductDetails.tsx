@@ -1,12 +1,12 @@
 "use client";
 
 import { useEffect } from "react";
-import { useGetProduct } from "../../_hooks/useGetProduct";
-import "./productDetails.scss";
-import Info from "../Info/Info";
-import NoDataInfo from "@/components/NoDataInfo/NoDataInfo";
 import Link from "next/link";
+import NoDataInfo from "@/components/NoDataInfo/NoDataInfo";
 import ProductDetailsSkeleton from "../ProductDetailsSkeleton/ProductDetailsSkeleton";
+import { useGetProduct } from "../../_hooks/useGetProduct";
+import Info from "../Info/Info";
+import "./productDetails.scss";
 
 interface Props {
   productId: string;

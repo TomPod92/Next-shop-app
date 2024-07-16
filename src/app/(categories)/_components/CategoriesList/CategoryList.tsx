@@ -1,15 +1,15 @@
 "use client";
 
-import Input from "@/components/Input/Input";
-import { useCategories } from "../../_hooks/useGetCategories";
-import CategoryListItem from "../CategoryListItem/CategoryListItem";
-import "./categoryList.scss";
-import NoDataInfo from "@/components/NoDataInfo/NoDataInfo";
 import { ChangeEvent, useEffect, useMemo } from "react";
 import { useSearchParams } from "next/navigation";
+import Input from "@/components/Input/Input";
+import NoDataInfo from "@/components/NoDataInfo/NoDataInfo";
 import useDebounceValue from "@/hooks/useDebounceValue";
 import usePagination from "@/hooks/usePagination";
 import Button from "@/components/Button/Button";
+import { useCategories } from "../../_hooks/useGetCategories";
+import CategoryListItem from "../CategoryListItem/CategoryListItem";
+import "./categoryList.scss";
 
 const skeletonArray = Array.from(Array(10));
 

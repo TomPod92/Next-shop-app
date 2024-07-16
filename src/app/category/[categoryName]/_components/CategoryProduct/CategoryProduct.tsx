@@ -1,8 +1,8 @@
+import { useRouter } from "next/navigation";
 import { Product } from "@/app/product/[productId]/_types";
 import SkeletonElement from "@/components/SkeletonElement/SkeletonElement";
-import "./categoryProduct.scss";
 import TextWithClamp from "@/components/TextWithClamp/TextWithClamp";
-import { useRouter } from "next/navigation";
+import "./categoryProduct.scss";
 
 interface Props {
   product?: Product;

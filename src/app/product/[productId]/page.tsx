@@ -1,5 +1,9 @@
-import "./productPage.scss";
 import ProductDetails from "./_components/ProductDetails/ProductDetails";
+import "./productPage.scss";
+
+export const metadata = {
+  title: "Product details page",
+};
 
 interface Props {
   params: { productId: string };
