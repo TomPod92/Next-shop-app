@@ -1,9 +1,11 @@
+import { ReactNode } from "react";
 import classNames from "classnames";
 import "./info.scss";
 
 interface Props {
   label: string;
-  value?: string | number;
+  //   value?: string | number;
+  value?: ReactNode;
   className?: string;
 }
 

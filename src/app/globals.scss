@@ -1,9 +1,4 @@
 :root {
-  // test
-  --sm: 600px;
-  --md: 900px;
-  --lg: 1200px;
-
   /* COLORS */
   --off-black-light: #28292c;
   --off-black-main: #202123;
@@ -20,8 +15,6 @@
   --border-radius-small: 5px;
   --border-radius-medium: 10px;
   --border-radius-large: 20px;
-  --header-height: 65px;
-  --main-padding: 3rem;
 }
 
 * {
@@ -37,10 +30,9 @@ body {
   background: var(--primary-main);
 }
 
-// test
 main {
   padding: 2rem;
-  color: white;
+  color: var(--off-white);
   font-size: 2rem;
 }
 

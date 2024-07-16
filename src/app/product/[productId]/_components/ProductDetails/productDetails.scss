@@ -29,4 +29,12 @@
       flex-direction: row;
     }
   }
+
+  & .category-info .info__value a {
+    color: var(--grey-light);
+    transition: color 0.25s ease-in-out;
+    &:hover {
+      color: var(--accent-main);
+    }
+  }
 }

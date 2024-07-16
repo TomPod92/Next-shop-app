@@ -5,6 +5,7 @@ import { useGetProduct } from "../../_hooks/useGetProduct";
 import "./productDetails.scss";
 import Info from "../Info/Info";
 import NoDataInfo from "@/components/NoDataInfo/NoDataInfo";
+import Link from "next/link";
 
 interface Props {
   productId: string;
@@ -41,7 +42,17 @@ const ProductDetails = ({ productId }: Props) => {
       <img className="product-details__image" src={productDetails?.image} />
       <div className="product-details__info-container">
         <Info label="Title" value={productDetails?.title} />
-        <Info label="Category" value={productDetails?.category} />
+        {productDetails?.category && (
+          <Info
+            label="Category"
+            className="category-info"
+            value={
+              <Link href={`/category/${productDetails.category}`}>
+                {productDetails?.category}
+              </Link>
+            }
+          />
+        )}
         <Info label="Price" value={productDetails?.price} />
         <Info label="Rating" value={ratingInfo} />
         <Info
