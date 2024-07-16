@@ -1,0 +1,14 @@
+.product-details-skeleton {
+  &__image-skeleton {
+    aspect-ratio: 1/1;
+  }
+
+  &__info-container {
+    width: 100%;
+  }
+
+  &__info-skeleton {
+    height: 21px;
+    max-width: 400px;
+  }
+}

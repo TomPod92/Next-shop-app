@@ -6,6 +6,7 @@ import "./productDetails.scss";
 import Info from "../Info/Info";
 import NoDataInfo from "@/components/NoDataInfo/NoDataInfo";
 import Link from "next/link";
+import ProductDetailsSkeleton from "../ProductDetailsSkeleton/ProductDetailsSkeleton";
 
 interface Props {
   productId: string;
@@ -35,6 +36,10 @@ const ProductDetails = ({ productId }: Props) => {
     return (
       <NoDataInfo info="Could not find any information about a product you are looking for" />
     );
+  }
+
+  if (isLoading) {
+    return <ProductDetailsSkeleton />;
   }
 
   return (

@@ -4,7 +4,6 @@ import "./info.scss";
 
 interface Props {
   label: string;
-  //   value?: string | number;
   value?: ReactNode;
   className?: string;
 }
